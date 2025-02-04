@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我們 - 涮涮鍋柳</title>
+  <link rel="icon" href="/Users/naoto/my-app/pic/favicon.jpg" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Noto Serif JP', serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-300">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="yanagi.html" class="text-3xl font-bold">涮涮鍋柳</a>
+
+      <!-- Mobile Navigation Toggle -->
+      <button id="nav-toggle" class="lg:hidden text-gray-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="nav-menu" class="hidden lg:block">
+        <ul class="flex flex-col lg:flex-row lg:space-x-8 text-sm lg:items-center">
+          <li>
+            <a href="yanagi_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">首頁</a>
+          </li>
+          <li class="relative group">
+            <a href="menu_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">菜單</a>
+          </li>
+          <li>
+            <a href="aboutus_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">店鋪資訊</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="hidden lg:flex items-center space-x-4">
+        <button onclick="window.location.href='aboutus_en.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">EN</button>
+        <button onclick="window.location.href='aboutus.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">日本語</button>
+        <a href="https://www.hotpepper.jp/strJ003744004/" target="_blank">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">預約</button>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-nav" class="hidden lg:hidden">
+    <div class="flex flex-col items-start px-4 py-2">
+      <a href="yanagi_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">首頁</a>
+      <a href="menu_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">菜單</a>
+      <a href="aboutus_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">關於我們</a>
+      <div class="flex flex-col space-y-2 mt-2">
+        <button onclick="window.location.href='aboutus_en.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">EN</button>
+        <button onclick="window.location.href='aboutus.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">日本語</button>
+        <a href="https://www.hotpepper.jp/strJ003744004/" target="_blank">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">預約</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // JavaScript for slideshow
+  const images = document.querySelectorAll('#slideshow img');
+  let currentIndex = 0;
+
+  // Function to change slides
+  function showNextSlide() {
+    images[currentIndex].classList.add('opacity-0'); // Hide current image
+    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+    images[currentIndex].classList.remove('opacity-0'); // Show next image
+  }
+
+  // Initialize slideshow
+  setInterval(showNextSlide, 7000); // Change image every 3 seconds
+
+  // Toggle mobile navigation
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('hidden');
+    document.getElementById('mobile-nav').classList.toggle('hidden'); // ここでモバイルメニューの表示を切り替え
+  });
+
+</script>
+
+  <!-- About Us Section -->
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-12"></h2>
+
+    <!-- Section 1 -->
+    <div class="flex flex-col lg:flex-row items-center gap-8 mb-12">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/course.jpg" alt="Shabu-shabu Yanagi" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">頂級阿古豬與特製高湯</h3>
+        <p class="text-gray-700 leading-relaxed">
+          涮涮鍋柳的阿古豬肉毫無腥味，以細膩的霜降和優雅的甜味為特色。
+          搭配嚴選食材熬製的特製高湯，最大限度地引出食材本身的鮮美。
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 (Reversed) -->
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-8 mb-12">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/inside2.jpeg" alt="Restaurant Interior" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">在寧靜空間中享受奢華</h3>
+        <p class="text-gray-700 leading-relaxed">
+          僅設9席的吧台，營造出成人隱密空間的氛圍。無論是獨自一人，還是與重要的人共度特別時光或接待客人，都非常適合。
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="flex flex-col lg:flex-row items-center gap-8 mb-12">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/toast.webp" alt="Sake Pairing" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">嚴選美酒與極致搭配</h3>
+        <p class="text-gray-700 leading-relaxed">
+          我們準備了泡盛、日本酒、葡萄酒等與料理相配的酒品。
+          請盡情享受料理與美酒的完美結合。
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 4 (Reversed) -->
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/outside.jpg" alt="Dining Experience" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">只有在涮涮鍋柳才能體驗的頂級美食之旅</h3>
+        <p class="text-gray-700 leading-relaxed">
+          在涮涮鍋柳，我們將頂級阿古豬肉、特製高湯與嚴選美酒相結合，
+          為您提供難忘的美食時光。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Google Maps and Store Information Section -->
+  <section class="bg-gray-900 text-gray-100 py-12">
+    <div class="container mx-auto flex flex-col lg:flex-row gap-8">
+      <!-- Google Map -->
+      <div class="flex-1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.2886200883654!2d127.67648674587936!3d26.21980998330385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56989419c91dd%3A0x16fc48f74bc3b195!2z44GX44KD44G244GX44KD44G25p-z!5e0!3m2!1sja!2sjp!4v1733370368793!5m2!1sja!2sjp"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="rounded shadow-md"
+        ></iframe>
+      </div>
+
+      <!-- Store Information -->
+      <div class="flex-1 text-left space-y-4">
+        <h2 class="text-2xl font-semibold">店鋪資訊</h2>
+        <p><strong>店鋪名稱:</strong> 涮涮鍋柳</p>
+        <p><strong>地址:</strong> 〒900-0032 沖繩縣那霸市松山1丁目19-1 公園旁松山 1F</p>
+        <p><strong>電話號碼:</strong> 0989759877</p>
+        <p><strong>營業時間:</strong></p>
+        <ul>
+<!--          <li>[中午] 12:00～15:00　<b>※預計2025年2月開始</b></li>-->
+          <li>[晚上] 17:00～0:00</li>
+        </ul>
+        <p><strong>休息日:</strong> 星期日</p>
+        <p><strong>座位數:</strong> 吧台9席</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-100 py-6 text-center">
+    <p>&copy; 2024 涮涮鍋柳. 版權所有。</p>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

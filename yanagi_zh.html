@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>涮涮鍋柳</title>
+  <link rel="icon" href="/Users/naoto/my-app/pic/favicon.jpg" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Noto Serif JP', serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-300">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="yanagi.html" class="text-3xl font-bold">涮涮鍋柳</a>
+
+      <!-- Mobile Navigation Toggle -->
+      <button id="nav-toggle" class="lg:hidden text-gray-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="nav-menu" class="hidden lg:block">
+        <ul class="flex flex-col lg:flex-row lg:space-x-8 text-sm lg:items-center">
+          <li>
+            <a href="yanagi_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">首頁</a>
+          </li>
+          <li class="relative group">
+            <a href="menu_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">菜單</a>
+          </li>
+          <li>
+            <a href="aboutus_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">關於我們</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Language and Reservation Buttons for Desktop -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <button id="en-button" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">EN</button>
+        <button id="jp-button" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">日本語</button>
+<!--        <button id="kr-button" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">한국어</button>-->
+        <a href="https://www.hotpepper.jp/strJ003744004/" target="_blank">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">預約</button>
+        </a>
+        <script>
+        document.getElementById('en-button').addEventListener('click', () => {
+        window.location.href = 'yanagi_en.html'; // 遷移先のURLを設定
+        });
+        document.getElementById('jp-button').addEventListener('click', () => {
+        window.location.href = 'yanagi.html'; // 遷移先のURLを設定
+        });
+        </script>
+      </div>
+    </div>
+  </header>
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-nav" class="hidden lg:hidden">
+    <div class="flex flex-col items-start px-4 py-2">
+      <a href="yanagi_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">首頁</a>
+      <a href="menu_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">菜單</a>
+      <a href="aboutus_zh.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">關於我們</a>
+      <div class="flex flex-col space-y-2 mt-2">
+        <button onclick="window.location.href='yanagi_en.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">EN</button>
+        <button onclick="window.location.href='yanagi.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">日本語</button>
+<!--        <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">한국어</button>-->
+        <a href="https://www.hotpepper.jp/strJ003744004/" target="_blank">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">預約</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+<section class="relative">
+  <div id="slideshow" class="relative w-full h-[400px] md:h-[600px]">
+    <img src="/Users/naoto/my-app/pic/main1.jpg" alt="Elegant dining area with warm lighting" class="w-full h-full object-cover absolute transition-opacity duration-1000" style="z-index: 1;">
+    <img src="/Users/naoto/my-app/pic/sozai2.jpg" alt="Beautifully plated Japanese cuisine" class="w-full h-full object-cover absolute opacity-0 transition-opacity duration-1000" style="z-index: 0;">
+
+  </div>
+</section>
+
+<script>
+  // JavaScript for slideshow
+  const images = document.querySelectorAll('#slideshow img');
+  let currentIndex = 0;
+
+  // Function to change slides
+  function showNextSlide() {
+    images[currentIndex].classList.add('opacity-0'); // Hide current image
+    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+    images[currentIndex].classList.remove('opacity-0'); // Show next image
+  }
+
+  // Initialize slideshow
+  setInterval(showNextSlide, 7000); // Change image every 3 seconds
+
+  // Toggle mobile navigation
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('hidden');
+    document.getElementById('mobile-nav').classList.toggle('hidden'); // ここでモバイルメニューの表示を切り替え
+  });
+
+</script>
+
+  <!-- About Section -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-3xl font-bold mb-4">舒適空間</h2>
+      <p class="text-base mb-6 leading-relaxed">本店的空間設計旨在提供舒適的放鬆感。燈光柔和且稍暗，營造出寧靜的氛圍。</p>
+      <div class="flex flex-col lg:flex-row gap-6">
+        <img src="/Users/naoto/my-app/pic/inside1.jpeg" alt="Beautifully plated Japanese cuisine" class="rounded-lg flex-1">
+        <img src="/Users/naoto/my-app/pic/inside2.jpeg" alt="Tranquil garden view" class="rounded-lg flex-1">
+      </div>
+    </div>
+  </section>
+
+  <!-- Material Section -->
+  <section class="py-16 bg-gray-100 px-4">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h2 class="text-3xl font-bold mb-4">對食材的堅持</h2>
+      <p class="text-base mb-6 leading-relaxed">
+        無法大量生產的阿古豬被稱為「能買到就已經很珍貴」的稀有品種。
+      </p>
+      <div class="flex justify-center mt-10">
+        <img src="/Users/naoto/my-app/pic/sozai1.jpg" alt="Delicious Japanese cuisine" class="rounded-lg shadow-lg w-full max-w-md">
+      </div>
+    </div>
+  </section>
+
+<!-- Google Maps and Store Information Section -->
+<section class="bg-gray-900 text-gray-100 py-12">
+  <div class="container mx-auto flex flex-col lg:flex-row gap-8">
+    <!-- Google Map -->
+    <div class="flex-1">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.2886200883654!2d127.67648674587936!3d26.21980998330385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56989419c91dd%3A0x16fc48f74bc3b195!2z44GX44KD44G244GX44KD44G25p-z!5e0!3m2!1sja!2sjp!4v1733370368793!5m2!1sja!2sjp"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="rounded shadow-md"
+      ></iframe>
+    </div>
+
+    <!-- Store Information -->
+    <div class="flex-1 text-left space-y-4">
+      <h2 class="text-2xl font-semibold">店鋪資訊</h2>
+      <p><strong>店鋪名稱:</strong> 涮涮鍋柳</p>
+      <p><strong>地址:</strong> 〒900-0032 沖繩縣那霸市松山1丁目19-1 公園旁松山 1F</p>
+      <p><strong>電話號碼:</strong> 0989759877</p>
+      <p><strong>營業時間:</strong></p>
+      <ul>
+<!--        <li>[中午] 12:00～15:00　<b>※預計2025年4月開始</b></li>-->
+        <li>[晚上] 17:00～0:00</li>
+      </ul>
+      <p><strong>休息日:</strong> 星期日</p>
+      <p><strong>座位數:</strong> 吧台9席</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-100 py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; 涮涮鍋柳. 版權所有。</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

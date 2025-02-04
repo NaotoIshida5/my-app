@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shabushabu Yanagi</title>
+  <link rel="icon" href="/Users/naoto/my-app/pic/favicon.jpg" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Noto Serif JP', serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-300">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="yanagi_en.html" class="text-3xl font-bold">Shabushabu Yanagi</a>
+
+      <!-- Mobile Navigation Toggle -->
+      <button id="nav-toggle" class="lg:hidden text-gray-800">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="nav-menu" class="hidden lg:block">
+        <ul class="flex flex-col lg:flex-row lg:space-x-8 text-sm lg:items-center">
+          <li>
+            <a href="yanagi_en.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">Home</a>
+          </li>
+          <li class="relative group">
+            <a href="menu_en.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">Menu</a>
+          </li>
+          <li>
+            <a href="aboutus_en.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">About Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Language and Reservation Buttons for Desktop -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <button id="ja-button" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">日本語</button>
+        <button id="zh-button" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">中文</button>
+<!--        <button id="kr-button" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">한국어</button>-->
+        <a href="https://www.hotpepper.jp/strJ003744004/" target="_blank">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Reservation</button>
+        </a>
+        <script>
+        document.getElementById('ja-button').addEventListener('click', () => {
+        window.location.href = 'yanagi.html'; // 遷移先のURLを設定
+        });
+        document.getElementById('zh-button').addEventListener('click', () => {
+        window.location.href = 'yanagi_zh.html'; // 遷移先のURLを設定
+        });
+        </script>
+      </div>
+    </div>
+  </header>
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-nav" class="hidden lg:hidden">
+    <div class="flex flex-col items-start px-4 py-2">
+      <a href="yanagi_en.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">Home</a>
+      <a href="menu_en.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">Menu</a>
+      <a href="aboutus_en.html" class="block px-4 py-2 hover:text-blue-500 transition-colors duration-200">About Us</a>
+      <div class="flex flex-col space-y-2 mt-2">
+        <button onclick="window.location.href='aboutus.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">日本語</button>
+        <button onclick="window.location.href='aboutus_zh.html'" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">中文</button>
+<!--        <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">한국어</button>-->
+        <a href="https://www.hotpepper.jp/strJ003744004/" target="_blank">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">予約する</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // JavaScript for slideshow
+  const images = document.querySelectorAll('#slideshow img');
+  let currentIndex = 0;
+
+  // Function to change slides
+  function showNextSlide() {
+    images[currentIndex].classList.add('opacity-0'); // Hide current image
+    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+    images[currentIndex].classList.remove('opacity-0'); // Show next image
+  }
+
+  // Initialize slideshow
+  setInterval(showNextSlide, 7000); // Change image every 3 seconds
+
+  // Toggle mobile navigation
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('hidden');
+    document.getElementById('mobile-nav').classList.toggle('hidden'); // ここでモバイルメニューの表示を切り替え
+  });
+
+</script>
+
+<!-- About Us Section -->
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto max-w-5xl">
+    <h2 class="text-3xl font-bold text-center mb-12"></h2>
+
+    <!-- Section 1 -->
+    <div class="flex flex-col lg:flex-row items-center gap-8 mb-12">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/course.jpg" alt="Shabu-shabu Yanagi" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">Exquisite Agu Pork & Carefully Crafted Broth</h3>
+        <p class="text-gray-700 leading-relaxed">
+          At Shabu-Shabu Yanagi, we take pride in serving premium Agu pork, a rare and highly sought-after breed.
+          Our Agu pork is completely odorless, with fine marbling and a delicate sweetness.
+          Paired with our specially crafted broth made from carefully selected ingredients, we bring out the pork’s natural umami to its fullest.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 (Reversed) -->
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-8 mb-12">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/inside2.jpeg" alt="Restaurant Interior" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">A Luxurious Dining Experience in an Intimate Setting</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Our restaurant features an exclusive 9-seat counter, offering a sophisticated and private atmosphere.
+          Whether dining alone, with a loved one, or for a business occasion, we provide the perfect setting for a truly memorable experience.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="flex flex-col lg:flex-row items-center gap-8 mb-12">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/toast.webp" alt="Sake Pairing" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">Finely Curated Sake & Exquisite Pairings</h3>
+        <p class="text-gray-700 leading-relaxed">
+          We offer a carefully curated selection of Awamori, Japanese sake, and fine wines, chosen to complement our dishes perfectly.
+          Enjoy the harmony of flavors as you indulge in the art of food and drink pairing.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 4 (Reversed) -->
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-8">
+      <div class="flex-1">
+        <img src="/Users/naoto/my-app/pic/outside.jpg" alt="Dining Experience" class="rounded-xl shadow-lg">
+      </div>
+      <div class="flex-1 text-left">
+        <h3 class="text-2xl font-semibold mb-4">An Unforgettable Shabu-Shabu Experience</h3>
+        <p class="text-gray-700 leading-relaxed">
+          At Shabu-Shabu Yanagi, we offer a unique and extraordinary dining experience, combining the highest quality Agu pork, expertly crafted broth, and premium sake selections.
+          We invite you to savor an unforgettable moment of culinary excellence with us.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Google Maps and Store Information Section -->
+<section class="bg-gray-900 text-gray-100 py-12">
+  <div class="container mx-auto flex flex-col lg:flex-row gap-8">
+    <!-- Google Map -->
+    <div class="flex-1">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.2886200883654!2d127.67648674587936!3d26.21980998330385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56989419c91dd%3A0x16fc48f74bc3b195!2z44GX44KD44G244GX44KD44G25p-z!5e0!3m2!1sja!2sjp!4v1733370368793!5m2!1sja!2sjp"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="rounded shadow-md"
+      ></iframe>
+    </div>
+
+    <!-- Store Information -->
+    <div class="flex-1 text-left space-y-4">
+  <h2 class="text-2xl font-semibold">Store Information</h2>
+  <p><strong>Store Name:</strong> Shabu-Shabu Yanagi</p>
+  <p><strong>Address:</strong> 1F, Parkside Matsuyama, 1-19-1 Matsuyama, Naha, Okinawa 900-0032, Japan</p>
+  <p><strong>Phone Number:</strong> 098-975-9877</p>
+  <p><strong>Business Hours:</strong></p>
+  <ul>
+<!--    <li>[Lunch] 12:00 PM – 3:00 PM <b>*Starting from April 2025</b></li>-->
+    <li>[Dinner] 5:00 PM – 12:00 AM</li>
+  </ul>
+  <p><strong>Closed on:</strong> Sundays</p>
+  <p><strong>Seating:</strong> 9 counter seats</p>
+</div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-100 py-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; しゃぶしゃぶ柳. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      const menu = document.getElementById('nav-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
